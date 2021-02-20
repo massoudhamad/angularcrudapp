@@ -1,0 +1,22 @@
+<app-card title="Users" subtitle="List of Users">
+        <table class="table table-borderd">
+        
+        <tr>
+        <th>SN</th><th>Name</th><th>Deparment</th><th>Status</th><th>Action</th>
+        </tr>
+        <tbody>
+        <tr *ngFor="let user of users;let i= index">
+            <td>{{i+1}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.department}}</td>
+            <td>
+                <span class="badge badge-success" *ngIf="user.active">Active</span>
+                <span class="badge badge-danger" *ngIf="!user.active">In Active</span>                
+            </td>
+            <td>
+                <button mat-raised-button color="primary" (click)="viewuser(user)">View Details</button>
+            </td>
+        </tr>
+        </tbody>
+        </table>
+    </app-card>
